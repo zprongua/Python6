@@ -14,8 +14,7 @@ def tic_tac_toe_finish(board: TicTacToeBoard, pos_y: int, pos_x: int, symbol: st
     :param symbol: The symbol that should be placed in the column (X, or O)
     :return: None
     """
-    pass  # remove pass statement and implement me
-
+    board[pos_y][pos_x] = symbol
 
 def count_instances(collection: Tuple, instance: Union[int, str]) -> int:
     """
@@ -25,7 +24,7 @@ def count_instances(collection: Tuple, instance: Union[int, str]) -> int:
     :param instance: An item in the collection parameter
     :return: An integer.
     """
-    pass  # remove pass statement and implement me
+    return collection.count(instance)
 
 
 def print_indexes_and_entries(indexes: Iterable, entries: Iterable) -> None:
@@ -38,7 +37,10 @@ def print_indexes_and_entries(indexes: Iterable, entries: Iterable) -> None:
     :param entries: A list or tuple
     :return: None
     """
-    pass  # remove pass statement and implement me
+    for pair in zip(indexes, entries):
+        left = (f'Index: {pair[0]}')
+        right = left.ljust(17)
+        print(f'{right} Entry: {(pair[1])}')
 
 
 def print_items_with_index(items: Iterable):
@@ -50,5 +52,8 @@ def print_items_with_index(items: Iterable):
     :param items: A tuple or a list
     :return: None
     """
-    pass  # remove pass statement and implement me
+    for y, x in enumerate(items):
+        green=str(y+1)
+        blue=str(x)
+        print(f"{green}: {blue}")
 
